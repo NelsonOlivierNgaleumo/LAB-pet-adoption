@@ -241,6 +241,35 @@ const pets = [
     }
 
   ];
+
+  // Render to DOM utility function
+const renderToDom = (divId, htmlToRender) => {
+  const selectedDiv = document.querySelector(divId);
+  selectedDiv.innerHTML = htmlToRender;
+};
+
+// get the cards on the DOM
+//empty string to pull info into
+
+const cardsOnDom = (pets) => {
+  let domString = "";
+  for (const pet of pets) {
+    domString += `<div class="pet-card" style="width: 18rem;">
+    <img src="${pet.image}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">${pet.name}</p>
+      <p class="card-text">${pet.color}</p>
+      <p class="card-text">${pet.description}</p>
+      <p class="card-text">${pet.type}</p>
+
+    </div>
+  </div>`;
+  }
+
+  renderToDom("#app", domString);
+};
+
+// function to filter each pet 
   let bonjour = []
   pets.forEach((pet) => {
        bonjour.push(pet);
