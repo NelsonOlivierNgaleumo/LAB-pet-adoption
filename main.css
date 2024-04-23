@@ -1,0 +1,27 @@
+body {
+  background-color: aqua;
+}
+
+#buttons {
+  padding: 80px 0;
+  text-align: center;
+
+}
+#app {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
+  color: blanchedalmond;
+
+}
+
+.pet-card {
+  margin: 10px;
+  border: solid 4px cadetblue;
+  text-align: center;
+}
+
+#addPet {
+  text-align: center;
+}
