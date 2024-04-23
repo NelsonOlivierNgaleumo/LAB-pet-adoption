@@ -275,3 +275,54 @@ const cardsOnDom = (pets) => {
        bonjour.push(pet);
   })
 console.log(bonjour);
+
+
+// add 3 category buttons
+
+const allBtn= document.querySelector("#allpets-btn");
+const dogsBtn= document.querySelector("#dog-btn");
+const catsBtn = document.querySelector("#cat-btn");
+
+// add event listener
+
+allBtn.addEventListener("click", () => {
+  cardsOnDom(pets);
+});
+dogsBtn.addEventListener("click", () => {
+  cardsOnDom(pets);
+});
+catsBtn.addEventListener("click", () => {
+  cardsOnDom(pets);
+});
+
+// add click event filter
+dogsBtn.addEventListener("click", () => {
+  const dogmember = filter(pets, "dog");
+  cardsOnDom(dogmember);
+});
+catsBtn.addEventListener("click", () => {
+  const catmember =filter(pets, "cat");
+  cardsOnDom(catmember); 
+});
+// add pet form
+
+const form = document.querySelector('form');
+
+const createPet = (e) => {
+  e.preventDefault();
+
+  const newPetObj = {
+    id: pets.length +1, 
+    image: document.querySelector("#image").value,
+    name: document.querySelector("#name").value,
+    color: document.querySelector("#color").value,
+    description: document.querySelector("#description").value,
+    type: document.querySelector("#type").value,
+  
+  };
+  pets.push(newPetObj);
+  cardsOnDom(pets);
+  form.reset();
+
+  };
+form.addEventListener("submit", createPet);
